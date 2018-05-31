@@ -2,9 +2,9 @@
     <div class="homerecommend">
         <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item in list" :key="item.id">
+            <li class="item border-bottom" v-for="item in recommendlist" :key="item.id">
                     <img class="item-img"
-                    :src="item.url" alt="">
+                    :src="item.imgUrl" alt="">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
@@ -18,26 +18,14 @@
 <script>
 export default {
     name: 'homerecommend',
+    props:{
+        recommendlist:{
+            type:Array
+        }
+    },
     data () {
         return {
-            list:[{
-                id:'001',
-                url:'http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_200x200_8eb33f07.jpg',
-                title:'精修宗华名输出积分等级发动机覅反对法大幅度反对法',
-                desc:'99元积分等级反击得分附加地方'
-                },
-                {
-                id:'002',
-                url:'http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_200x200_8eb33f07.jpg',
-                title:'精修宗华名输出积分等级发动机覅反对法大幅度反对法',
-                desc:'99元积分等级反击得分附加地方'
-                },
-                {
-                id:'003',
-                url:'http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_200x200_8eb33f07.jpg',
-                title:'精修宗华名输出积分等级发动机覅反对法大幅度反对法',
-                desc:'99元积分等级反击得分附加地方'
-                }]
+            
         }
     }
 }

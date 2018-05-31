@@ -1,10 +1,10 @@
 <template>
     <div class="homeweekend">
         <div class="week-title">周末去哪儿</div>
-        <div class="week-content" v-for="item in weeklist" :key="item.id">
+        <div class="week-content" v-for="item in weekendlist" :key="item.id">
             <div class="week-img">
                 <img class="img"
-                 :src="item.url" alt="">
+                 :src="item.imgUrl" alt="">
             </div>
             <div class="week-info">
                 <p class="p-week-title">{{item.title}}</p>
@@ -16,26 +16,13 @@
 <script>
 export default {
     name:'homeweekend',
+    props:{
+        weekendlist:{
+            type:Array
+        }
+    },
     data () {
         return {
-            weeklist:[{
-                id:'001',
-                url:'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-                title:'北京山花好地方',
-                desc:'乱花渐欲迷人眼，北京珊瑚好地方'
-            },
-            {
-                id:'002',
-                url:'http://img1.qunarzz.com/sight/source/1505/b2/fde1bfcd057a52.jpg_r_640x214_bbf3fa44.jpg',
-                title:'北京山花好地方',
-                desc:'乱花渐欲迷人眼，北京珊瑚好地方'
-            },
-            {
-                id:'003',
-                url:'http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg',
-                title:'北京山花好地方',
-                desc:'乱花渐欲迷人眼，北京珊瑚好地方'
-            }]
         }
     }
 }

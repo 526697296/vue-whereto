@@ -6,7 +6,7 @@
     <div class="header-input">
         <input type="text" class="text" placeholder="请输入城市/景点/游玩主题">
     </div>
-    <div class="header-right">城市
+    <div class="header-right">{{this.city}}
         <span class="iconfont">&#xe64a;</span>
     </div>
   </div>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-    name:'homeader',
+  name:'homeader',
+  props:{
+    city:{
+      type:String
+    }
+  },
   data () {
     return {
       
