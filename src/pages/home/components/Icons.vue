@@ -8,6 +8,7 @@
                 </div>
                 <p class="icon-desc">{{item.text}}</p>
             </div>
+            
             </swiper-slide>
         </swiper>
     </div>
