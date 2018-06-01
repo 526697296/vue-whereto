@@ -18,7 +18,8 @@
             </div>
         </div>
         <!-- cities是一个对象，所以这里要二次循环 -->
-        <div class="area" v-for="(item2,key) in cities" :key="key">
+        <!-- :ref="key"动态 -->
+        <div class="area" v-for="(item2,key) in cities" :key="key" :ref="key">
             <div class="title border-topbottom">{{key}}</div>
             <div class="item-list" v-for="item3 in item2" :key="item3.id">
                 <div class="item border-bottom">{{item3.name}}</div>
@@ -37,9 +38,26 @@ export default {
         },
         hotCities: {
             type:Array
+        },
+        letaaa: {
+            type:String
         }
     },
     name: 'citylist',
+    watch: {
+        // 监听APL.vue里面的数据变化
+        // 当点击apl.vue中的字母，则list.vue列表中，显示对应的信息
+        letaaa () {
+            if(this.letaaa) {
+                // this.letaaa获取的是一个数组
+                const element = this.$refs[this.letaaa][0]
+                // console.log(element)
+                // scroll.scrollToElement ==>better-scroll中的方法
+                this.scroll.scrollToElement(element)
+                
+            }
+        }
+    },
     data () {
         return {
 

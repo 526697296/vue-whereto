@@ -1,7 +1,7 @@
 <template>
     <div class="cityapl">
         <ul class="list">
-            <li class="item" v-for="(item, key) in cities" :key="key">{{key}}</li>
+            <li @click="handLetterClick" class="item" v-for="(item, key) in cities" :key="key">{{key}}</li>
         </ul>
     </div>
 </template>
@@ -16,6 +16,13 @@ export default {
     data () {
         return {
 
+        }
+    },
+    methods: {
+        // 1点击的时候传递一个change事件
+        handLetterClick (e) {
+            // console.log(e.target.innerText);
+            this.$emit('change', e.target.innerText)
         }
     }
 }

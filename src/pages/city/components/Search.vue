@@ -3,8 +3,8 @@
         <div class="citysearch border-top">
         <input type="text" class="search-input" placeholder="输入城市名或拼音">
         </div>
-        <city-list :cities="cities" :hotCities="hotCities"></city-list>
-        <city-apl :cities="cities"></city-apl>
+        <city-list :cities="cities" :hotCities="hotCities" :letaaa="letaaa"></city-list>
+        <city-apl :cities="cities" @change="handChange"></city-apl>
     </div>
 
 </template>
@@ -16,7 +16,9 @@ export default {
     data () {
         return {
             cities:{},
-            hotCities:[]
+            hotCities:[],
+            // 定义，然后传递给子组件list.vue
+            letaaa: ''
         }
     },
     components:{
@@ -35,6 +37,12 @@ export default {
                 this.cities = res.data.cities;
                 this.hotCities = res.data.hotCities
             }
+            
+        },
+        // 接受APL.vue子组件传递过来的数据
+        handChange (letaaa) {
+            // console.log(letaaa)
+            this.letaaa = letaaa
             
         }
     },
