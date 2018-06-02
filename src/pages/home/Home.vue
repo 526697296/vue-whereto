@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :swiperlist="swiperlist"></home-swiper>
     <home-icons :iconlist="iconlist"></home-icons>
     <home-recommend :recommendlist="recommendlist"></home-recommend>
@@ -18,7 +18,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      city:'',
+      // city:'',
       swiperlist:[],
       iconlist:[],
       recommendlist:[],
@@ -33,7 +33,7 @@ export default {
     getHomeInfoSucc (res) {
       res = res.data
       if(res.ret && res.data){
-        this.city = res.city;
+        // this.city = res.city; 
         this.swiperlist = res.data.swiperList;
         this.iconlist = res.data.iconList;
         this.recommendlist = res.data.recommendList;

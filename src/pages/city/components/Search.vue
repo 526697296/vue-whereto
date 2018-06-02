@@ -8,7 +8,7 @@
         <!-- 收索隐藏层 -->
         <div class="search-content" ref="wrapper" v-show="keyword">
             <ul>
-                <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+                <li @click="handcity(item.name)" class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
                 <li class="search-item border-bottom" v-show="haslist">
                     没有找到匹配数据
                 </li>
@@ -89,6 +89,13 @@ export default {
             // console.log(letaaa)
             this.letaaa = letaaa
             
+        },
+        handcity (city) {
+            //  console.log(city);
+            //  alert(city)
+            this.$store.dispatch('changecity',city);
+            this.$router.push('/')
+            // this.keyword = []
         }
     },
     mounted () {

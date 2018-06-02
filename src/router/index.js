@@ -11,6 +11,10 @@ export default new Router({
   mode:"history",
   routes: [
     {
+      path:'*',
+      redirect: '/'
+    },
+    {
       path: '/',
       name: 'Home',
       component: Home
@@ -19,6 +23,7 @@ export default new Router({
       path:'/city',
       name: 'City',
       component: City,
+      redirect: '/search',
       children:[
         {
           path:'/search',
