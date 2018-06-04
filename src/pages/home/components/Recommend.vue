@@ -2,7 +2,8 @@
     <div class="homerecommend">
         <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item in recommendlist" :key="item.id">
+            
+            <router-link :to="'/detail/'+item.id" tag="li" class="item border-bottom" v-for="item in recommendlist" :key="item.id">
                     <img class="item-img"
                     :src="item.imgUrl" alt="">
                 <div class="item-info">
@@ -10,7 +11,8 @@
                     <p class="item-desc">{{item.desc}}</p>
                     <button class="item-button">查看详情</button>
                 </div>
-            </li>
+            </router-link>
+            
         </ul>
         <a class="chan border-top">查看更多</a>
     </div>
@@ -18,6 +20,11 @@
 <script>
 export default {
     name: 'homerecommend',
+    methods: {
+        // handrouter () {
+        //     this.$router.push('/detail')
+        // }
+    },
     props:{
         recommendlist:{
             type:Array

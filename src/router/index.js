@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home.vue'
 import City from '@/pages/city/City.vue'
 import Search from '@/pages/city/components/Search.vue'
 import Searcht from '@/pages/city/components/Searcht.vue'
+import Detail from '@/pages/detail/Detail.vue'
 
 Vue.use(Router)
 
@@ -17,7 +18,12 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+    },
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
     },
     {
       path:'/city',
