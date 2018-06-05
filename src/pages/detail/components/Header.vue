@@ -26,6 +26,10 @@ export default {
     activated () {
         window.addEventListener('scroll',this.handscroll)
     },
+    deactivated () {
+        // 解绑
+        window.removeEventListener('scroll',this.handscroll)
+    },
     methods: {
         handscroll () {
             const p = document.documentElement.scrollTop;
