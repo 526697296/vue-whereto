@@ -2,10 +2,6 @@
 <div>
     <div class="banner" @click="handbannerclick">
         <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1805/6f/6f885ea8b30c67bca3.water.jpg_600x330_f2f668e4.jpg" alt="1">
-        <div class="iconfont-left" @click="banngerback">
-            <span class="iconfont-bg"></span>
-            <span class="iconfont iconfont-1">&#xe624;</span>
-        </div>
         <div class="banner-info">
             <div class="banner-number">
                 <span class="iconfont iconfont-2">&#xe6dd;</span>
@@ -18,6 +14,7 @@
     </div>
     <!-- 轮播组件 -->
     <gallary :imgs="imgs" v-show="showgallary" @close="handclose"></gallary>
+    <div class="div22">1111</div>
 </div>
 </template>
 <script>
@@ -31,9 +28,6 @@ export default {
         }
     },
     methods: {
-        banngerback () {
-            this.$router.push('/')
-        },
         handbannerclick () {
             this.showgallary = true
         },
@@ -48,6 +42,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.div22
+  height 1000px
 .banner
   overflow hidden
   height 0
@@ -82,27 +78,4 @@ export default {
       color #ffffff
       font-size 0.36rem
       line-height 0.4rem
-  .iconfont-left
-    position absolute
-    top 0
-    left 0
-    margin .1rem 0 0 .1rem
-    color #ffffff
-    width .72rem
-    line-height 0.72rem
-    height .72rem
-    .iconfont-bg
-      background-color rgba(0,0,0,.5)
-      height 0.72rem
-      position absolute
-      top 0
-      left 0
-      display block
-      width 0.72rem
-      border-radius 50%
-    .iconfont-1
-      display block
-      line-height 0.72rem
-      font-size 0.36rem
-      text-align center
 </style>
