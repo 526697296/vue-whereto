@@ -30,7 +30,7 @@ export default {
         handscroll () {
             const p = document.documentElement.scrollTop;
             if(p > 10) {
-                const opacity = p / 140;
+                const opacity = p / 140
                 this.optionStyle = {
                     opacity
                 }
