@@ -1,29 +1,41 @@
 <template>
 <div>
     <div class="banner" @click="handbannerclick">
-        <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1805/6f/6f885ea8b30c67bca3.water.jpg_600x330_f2f668e4.jpg" alt="1">
+        <img class="banner-img" :src="bannerImg" alt="1">
         <div class="banner-info">
             <div class="banner-number">
                 <span class="iconfont iconfont-2">&#xe6dd;</span>
-                <em class="banner-em">79</em>
+                <em class="banner-em">{{this.bannerImg.length}}</em>
             </div>
             <div class="banner-title">
-                世界之窗(AAAAAA景区)
+                {{this.sightName}}
             </div>
         </div>
     </div>
     <!-- 轮播组件 -->
-    <gallary :imgs="imgs" v-show="showgallary" @close="handclose"></gallary>
-    <div class="div22">1111</div>
+    <fade>
+    <gallary :gallaryImgs="gallaryImgs" v-show="showgallary" @close="handclose"></gallary>
+    </fade>
 </div>
 </template>
 <script>
 import Gallary from '../../../common/gallary/Gallary.vue'
+import Fade from '../../../common/fade/Fade.vue'
 export default {
     name:'banner',
+    props: {
+        sightName:{
+            type:String
+        },
+        bannerImg:{
+            type:String
+        },
+        gallaryImgs:{
+            type:Array
+        }
+    },
     data () {
         return {
-            imgs: ["http://img1.qunarzz.com/sight/p0/1412/14/6d12e0e5d7457f739d1ff64970e2eeac.water.jpg_350x240_d40f2c2a.jpg","http://img1.qunarzz.com/sight/p0/1412/8c/6efd03e0e0694c2d3a6eace2789ca078.water.jpg_350x240_172012ea.jpg"],
             showgallary: false
         }
     },
@@ -37,13 +49,12 @@ export default {
         }
     },
     components: {
-        Gallary
+        Gallary,
+        Fade
     }
 }
 </script>
 <style lang="stylus" scoped>
-.div22
-  height 1000px
 .banner
   overflow hidden
   height 0

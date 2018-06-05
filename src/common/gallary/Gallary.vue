@@ -2,7 +2,7 @@
     <div class="gallary" @click="handoverclick">
         <div class="content">
             <swiper :options="swiperOptions">
-                <swiper-slide v-for="item in imgs" :key="item">
+                <swiper-slide v-for="item in gallaryImgs" :key="item">
                 <img class="swiper-img" :src="item" />
                 </swiper-slide>
                 <div class="swiper-pagination"  slot="pagination"></div>
@@ -14,7 +14,7 @@
 export default {
     name: 'gallary',
     props: {
-        imgs: {
+        gallaryImgs: {
             type:Array
         }
     },
@@ -54,7 +54,7 @@ export default {
     color #fff
     height 0
     width 100%
-    padding-bottom 70%
+    padding-bottom 100%
     .swiper-pagination
       position absolute
       bottom -2rem

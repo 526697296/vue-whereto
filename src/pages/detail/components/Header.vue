@@ -48,6 +48,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .header-fixed
+  z-index 2
   position fixed
   top 0
   left 0

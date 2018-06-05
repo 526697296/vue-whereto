@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <!-- exclude="Detail"每次都重新请求 -->
+    <keep-alive exclude="Detail">
       <router-view/>
     </keep-alive>
   </div>
